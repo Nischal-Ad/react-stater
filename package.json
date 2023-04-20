@@ -1,7 +1,7 @@
 {
 	"name": "react-stater-project",
-	"private": false,
-	"version": "1.0.0",
+	"private": true,
+	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -34,22 +34,5 @@
 		"@vitejs/plugin-react-swc": "^3.0.0",
 		"typescript": "^4.9.3",
 		"vite": "^4.2.0"
-	},
-	"description": "This is react stater project with vite",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Nischal-Ad/react-stater.git"
-	},
-	"keywords": [
-		"react-stater",
-		"react",
-		"vite"
-	],
-	"author": "Nishcal-Ad",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Nischal-Ad/react-stater/issues"
-	},
-	"homepage": "https://github.com/Nischal-Ad/react-stater#readme"
+	}
 }
