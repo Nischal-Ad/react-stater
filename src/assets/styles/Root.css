@@ -1,0 +1,14 @@
+:root {
+	/* color  */
+	--black: #191919;
+	--white: #f3f3f3;
+
+	--height: 100dvh;
+
+	/* font family */
+	--ff-poppins: 'Poppins';
+	--ff-quicksand: 'quicksand';
+	--ff-nunito: 'nunito';
+
+	/* gradients */
+}

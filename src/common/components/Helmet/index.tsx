@@ -3,15 +3,14 @@ import { Helmet } from 'react-helmet';
 
 interface helmetProps {
 	title: string;
-	name?: string;
 	content?: string;
 }
 
-const index: React.FC<helmetProps> = ({ title, name, content }) => {
+const index: React.FC<helmetProps> = ({ title, content }) => {
 	return (
 		<Helmet>
 			<title>{title} - App</title>
-			<meta name={name} content={content} />
+			<meta name={title} content={content} />
 		</Helmet>
 	);
 };
