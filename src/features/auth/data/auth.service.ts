@@ -1,6 +1,5 @@
 import localAxios from '@Utils/localAxios';
 import { ILogin } from './auth.model';
-import { json } from 'stream/consumers';
 
 // only for stater  auth test
 export const onLogin = (payload: ILogin) => {
