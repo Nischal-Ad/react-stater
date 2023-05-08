@@ -12,7 +12,7 @@ const globalCss = css`
 		min-height: var(--height);
 	}
 
-	body::-webkit-scrollbar {
+	*::-webkit-scrollbar {
 		display: none;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
