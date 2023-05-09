@@ -1,9 +1,9 @@
 :root {
+	--height: 100dvh;
+
 	/* color  */
 	--black: #191919;
 	--white: #f3f3f3;
-
-	--height: 100dvh;
 
 	/* font family */
 	--ff-poppins: 'Poppins';
