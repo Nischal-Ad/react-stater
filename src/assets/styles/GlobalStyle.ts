@@ -23,6 +23,10 @@ const globalCss = css`
 		font-family: var(--ff-poppins) !important;
 		scroll-behavior: smooth;
 	}
+
+	a {
+		text-decoration: none !important;
+	}
 `;
 
 export const GlobalStyles = createGlobalStyle`
