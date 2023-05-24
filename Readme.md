@@ -1,7 +1,17 @@
+## After Installing
+
+### Project title and icon
+
 change project title and icon in index.html
 
-change project name in package.json
+### Package.json
+
+if needed change package name and its description in package.json
+
+### LocalAxios
 
 insert "baseUrl" in localAxios.ts in common->utils
+
+### Helmet
 
 insert app name in helmet->title in common->components
