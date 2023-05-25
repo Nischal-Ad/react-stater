@@ -1,5 +1,5 @@
 export const fakeData = [
-	{
-		name: 'test',
-	},
-];
+  {
+    name: 'test',
+  },
+]
