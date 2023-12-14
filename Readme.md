@@ -14,4 +14,4 @@ insert "baseUrl" in localAxios.ts in common->utils
 
 ### Helmet
 
-insert app name in helmet->title in common->components
+insert app name in title in common->components

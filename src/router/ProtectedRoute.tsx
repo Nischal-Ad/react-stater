@@ -1,30 +1,47 @@
 import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { Suspense } from 'react'
 import Loading from '@Components/Loader'
-import { notifyError } from '@Utils/alerts'
 
 interface ProtectedRouteProps {
   auth: boolean
   isAdmin?: boolean
+  adminRoute?: boolean
+  userRoute?: boolean
   Navbar: React.ReactElement
   Footer: React.ReactElement
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
-  auth,
+  auth = false,
   isAdmin = false,
+  userRoute = false,
+  adminRoute = false,
   Navbar,
   Footer,
 }) => {
+  const location = useLocation()
+
   if (!auth) {
-    notifyError('please login first')
-    return <Navigate to={'/'} replace />
+    const previousPath = location.state?.previousPath
+    if (previousPath !== location.pathname) {
+      return (
+        <Navigate
+          to="/"
+          replace={true}
+          state={{ previousPath: location.pathname }}
+        />
+      )
+    }
   }
 
-  // if (!isAdmin) {
-  // 	return <Navigate to={'/'} replace />;
-  // }
+  if (userRoute && isAdmin) {
+    return <Navigate to={'/admin/dashboard'} replace={true} />
+  }
+
+  if (adminRoute && !isAdmin) {
+    return <Navigate to={'/dashboard'} replace={true} />
+  }
 
   return (
     <>

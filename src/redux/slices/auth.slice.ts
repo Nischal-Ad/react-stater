@@ -1,17 +1,17 @@
+import { ILogin, ILoginState } from '@Features/auth/data/auth.model'
 import { createSlice } from '@reduxjs/toolkit'
 import type { CaseReducer, PayloadAction } from '@reduxjs/toolkit'
-import { ILogin, ILoginState } from '@Features/auth/data/auth.model'
 
 const initialState: ILoginState = {
   status: 'idle',
-  data: {} as ILogin,
+  data: {},
   error: '',
+  isAuth: false,
 }
 
 const setLoading: CaseReducer<ILoginState> = (state) => ({
   ...state,
   status: 'loading',
-  error: '',
 })
 
 const setData: CaseReducer<ILoginState, PayloadAction<ILogin>> = (
@@ -19,11 +19,12 @@ const setData: CaseReducer<ILoginState, PayloadAction<ILogin>> = (
   action
 ) => ({
   status: 'success',
+  isAuth: action.payload.isAuth,
   data: action.payload,
   error: '',
 })
 
-const setError: CaseReducer<ILoginState, PayloadAction<any>> = (
+const setError: CaseReducer<ILoginState, PayloadAction<Error>> = (
   state,
   action
 ) => ({

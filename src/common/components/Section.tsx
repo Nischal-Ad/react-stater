@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react'
-import Container from '@mui/material/Container'
 
 interface ISection extends PropsWithChildren {
   id: string
@@ -7,8 +6,8 @@ interface ISection extends PropsWithChildren {
 
 const Section: React.FC<ISection> = ({ id, children }) => {
   return (
-    <section id={id}>
-      <Container maxWidth="xl">{children}</Container>
+    <section id={id} className="container mx-auto">
+      {children}
     </section>
   )
 }

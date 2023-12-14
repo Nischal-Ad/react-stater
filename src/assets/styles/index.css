@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* color  */
+    --black: #191919;
+    --white: #f3f3f3;
+
+    /* font family */
+    --ff-poppins: 'Poppins';
+    --ff-quicksand: 'quicksand';
+    --ff-nunito: 'nunito';
+
+    /* gradients */
+  }
+}
+
+@layer components {
+  * {
+    @apply font-poppins;
+    scroll-behavior: smooth;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: var(--height);
+  }
+}

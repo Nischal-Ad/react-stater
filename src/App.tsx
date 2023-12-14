@@ -1,7 +1,6 @@
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import WebFont from 'webfontloader'
-import router from './router/app.router'
-import { RouterProvider } from 'react-router-dom'
+import Router from './router/app.router'
 
 const App = () => {
   useEffect(() => {
@@ -12,7 +11,7 @@ const App = () => {
     })
   }, [])
 
-  return <RouterProvider router={router} />
+  return <Router isAuth={false} isAdmin={false} />
 }
 
-export default App
+export default memo(App)

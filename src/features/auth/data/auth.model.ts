@@ -1,11 +1,14 @@
-export interface ILogin {
+export type TLogin = {
   email: string
   password: string
-  isAuth: boolean
 }
 
-export interface ILoginState {
-  status: 'idle' | 'loading' | 'success' | 'error'
-  data: ILogin
-  error: any
+export interface ILogin extends IStatus {
+  user: TLogin
+  isAuth?: boolean
+}
+
+export interface ILoginState extends IState {
+  data: Partial<ILogin>
+  isAuth?: boolean
 }
