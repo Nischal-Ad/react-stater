@@ -1,9 +1,9 @@
-import { enqueueSnackbar } from 'notistack'
+import { message } from 'antd'
 
-export const notifySuccess = (message: string) => {
-  enqueueSnackbar({ message, variant: 'success' })
+export const notifySuccess = (content: string) => {
+  message.success({ content, duration: 1 })
 }
 
-export const notifyError = (message: string) => {
-  enqueueSnackbar({ message, variant: 'error' })
+export const notifyError = (content: string) => {
+  message.error({ content, duration: 1 })
 }
