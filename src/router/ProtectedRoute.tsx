@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
 import { Suspense } from 'react'
@@ -8,8 +9,7 @@ interface ProtectedRouteProps {
   isAdmin?: boolean
   adminRoute?: boolean
   userRoute?: boolean
-  Navbar: React.ReactElement
-  Footer: React.ReactElement
+  Menu: any
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
@@ -17,8 +17,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   isAdmin = false,
   userRoute = false,
   adminRoute = false,
-  Navbar,
-  Footer,
+  Menu,
 }) => {
   const location = useLocation()
 
@@ -45,11 +44,11 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 
   return (
     <>
-      {Navbar}
-      <Suspense fallback={<Loading />}>
-        <Outlet />
-      </Suspense>
-      {Footer}
+      <Menu>
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </Menu>
     </>
   )
 }
