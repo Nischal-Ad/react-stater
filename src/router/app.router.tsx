@@ -8,8 +8,8 @@ import { lazy } from 'react'
 import ProtectedRoute from './ProtectedRoute'
 
 //normal components
-import Navbar from '@Shared/navbar/Navbar'
-import Footer from '@Shared/footer/Footer'
+import UserMenu from '@Shared/user'
+import AdminMenu from '@Shared/admin'
 import Error from '@Components/Error'
 import RestrictedRoute from './RestrictedRoute'
 
@@ -35,8 +35,7 @@ const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
           element={
             <ProtectedRoute
               auth={isAuth}
-              Navbar={isAdmin ? <Navbar /> : <Navbar />}
-              Footer={<Footer />}
+              Menu={isAdmin ? AdminMenu : UserMenu}
             />
           }
         >
@@ -47,12 +46,7 @@ const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
         {/* protected routes for user */}
         <Route
           element={
-            <ProtectedRoute
-              auth={isAuth}
-              userRoute={true}
-              Navbar={<Navbar />}
-              Footer={<Footer />}
-            />
+            <ProtectedRoute auth={isAuth} userRoute={true} Menu={UserMenu} />
           }
         >
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
@@ -66,8 +60,7 @@ const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
               auth={isAuth}
               isAdmin={isAdmin}
               adminRoute={true}
-              Navbar={<Navbar />}
-              Footer={<Footer />}
+              Menu={AdminMenu}
             />
           }
         >
