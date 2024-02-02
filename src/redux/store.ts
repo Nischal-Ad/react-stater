@@ -4,7 +4,7 @@ import reducer from './reducer'
 
 const store = configureStore({
   reducer: reducer,
-  devTools: true,
+  devTools: process.env.NODE_ENV !== 'production',
 })
 
 export type RootState = ReturnType<typeof store.getState>
