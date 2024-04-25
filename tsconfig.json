@@ -18,13 +18,11 @@
     "baseUrl": ".",
     "paths": {
       "@Img/*": ["src/assets/img/*"],
-      "@Data/*": ["src/assets/data/*"],
-      "@Styles/*": ["src/assets/styles/*"],
-      "@Svg/*": ["src/assets/svg/*"],
+      "@Assets/*": ["src/assets/*"],
       "@Components/*": ["src/common/components/*"],
       "@Utils/*": ["src/common/utils/*"],
       "@Shared/*": ["src/common/shared/*"],
-      "@Features/*": ["src/features/*"],
+      "@Pages/*": ["src/pages/*"],
       "@Slices/*": ["src/redux/slices/*"],
       "@Store": ["src/redux/store.ts"]
     }

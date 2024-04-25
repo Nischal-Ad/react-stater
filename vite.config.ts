@@ -7,13 +7,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@Img': path.resolve(__dirname, './src/assets/img'),
-      '@Data': path.resolve(__dirname, './src/assets/data'),
-      '@Styles': path.resolve(__dirname, './src/assets/styles'),
-      '@Svg': path.resolve(__dirname, './src/assets/svg'),
+      '@Assets': path.resolve(__dirname, './src/assets'),
       '@Components': path.resolve(__dirname, './src/common/components'),
       '@Utils': path.resolve(__dirname, './src/common/utils'),
       '@Shared': path.resolve(__dirname, './src/common/shared'),
-      '@Features': path.resolve(__dirname, './src/features'),
+      '@Pages': path.resolve(__dirname, './src/pages'),
       '@Slices': path.resolve(__dirname, './src/redux/slices'),
       '@Store': path.resolve(__dirname, './src/redux/store.ts'),
     },

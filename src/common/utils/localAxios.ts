@@ -1,8 +1,15 @@
 import axios from 'axios'
 
 const localAxios = axios.create({
+  // baseURL: 'http://13.233.233.118:8000/api/v1',
   baseURL: '',
   withCredentials: true,
+  timeout: 10000,
+
+  // headers: {
+  //   'Content-Type': 'application/json',
+  //   Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
+  // },
 })
 
 localAxios.interceptors.response.use((response) => response.data)

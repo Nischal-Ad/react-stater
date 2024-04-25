@@ -1,30 +1,34 @@
-import { ILogin, ILoginState } from '@Features/auth/data/auth.model'
 import { createSlice } from '@reduxjs/toolkit'
 import type { CaseReducer, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState: ILoginState = {
+interface IAuthState extends IState {
+  data: Partial<IAuth>
+  isAuth?: boolean
+}
+
+const initialState: IAuthState = {
   status: 'idle',
   data: {},
   error: '',
   isAuth: false,
 }
 
-const setLoading: CaseReducer<ILoginState> = (state) => ({
+const setLoading: CaseReducer<IAuthState> = (state) => ({
   ...state,
   status: 'loading',
 })
 
-const setData: CaseReducer<ILoginState, PayloadAction<ILogin>> = (
+const setData: CaseReducer<IAuthState, PayloadAction<IAuth>> = (
   state,
   action
 ) => ({
   status: 'success',
-  isAuth: action.payload.isAuth,
+  isAuth: true,
   data: action.payload,
   error: '',
 })
 
-const setError: CaseReducer<ILoginState, PayloadAction<Error>> = (
+const setError: CaseReducer<IAuthState, PayloadAction<Error>> = (
   state,
   action
 ) => ({

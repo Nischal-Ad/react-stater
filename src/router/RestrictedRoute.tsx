@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { Suspense } from 'react'
-import Loading from '@Components/Loader'
+import { Spin } from 'antd'
 
 interface IRestrictedRoutes {
   auth: boolean
@@ -22,7 +22,13 @@ const RestrictedRoute: React.FC<IRestrictedRoutes> = ({
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
+      <Suspense
+        fallback={
+          <div className="mt-10 flex justify-center">
+            <Spin size="large" />
+          </div>
+        }
+      >
         <Outlet />
       </Suspense>
     </>

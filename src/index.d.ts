@@ -7,3 +7,7 @@ interface IStatus {
   message: string
   success: boolean
 }
+
+interface IAuth extends IStatus {
+  user?: Partial<IUser>
+}

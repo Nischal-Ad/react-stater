@@ -5,33 +5,26 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom'
 import { lazy } from 'react'
-import ProtectedRoute from './ProtectedRoute'
 
 //normal components
-import UserMenu from '@Shared/user'
-import AdminMenu from '@Shared/admin'
 import Error from '@Components/Error'
 import RestrictedRoute from './RestrictedRoute'
+import ProtectedRoute from './ProtectedRoute'
 
 // Lazy load components
-const Auth = lazy(() => import('@Features/auth'))
+const Auth = lazy(() => import('@Pages/auth'))
 
 const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        {/* normal routes */}
-        {/* <Route path="*" element={<Error />} /> */}
-        {/* end of normal routes */}
-
         {/* restricted routes only assisable when user is logout */}
         <Route element={<RestrictedRoute auth={isAuth} isAdmin={isAdmin} />}>
           <Route path="/" element={<Auth />} />
         </Route>
-        {/* end of restricted routes */}
 
         {/* protected routes for auth user */}
-        <Route
+        {/* <Route
           element={
             <ProtectedRoute
               auth={isAuth}
@@ -39,22 +32,20 @@ const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
             />
           }
         >
-          {/* <Route path="/" element={<Auth />} /> */}
-        </Route>
-        {/* end of protected routes for auth user */}
+          <Route path="/" element={<Auth />} />
+        </Route> */}
 
         {/* protected routes for user */}
-        <Route
+        {/* <Route
           element={
             <ProtectedRoute auth={isAuth} userRoute={true} Menu={UserMenu} />
           }
         >
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        </Route>
-        {/* end of protected routes for user */}
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route> */}
 
         {/* protected routes for admin */}
-        <Route
+        {/* <Route
           element={
             <ProtectedRoute
               auth={isAuth}
@@ -64,10 +55,10 @@ const Router = ({ isAuth, isAdmin }: { isAuth: boolean; isAdmin: boolean }) => {
             />
           }
         >
-          {/* <Route path="/admin/dashboard" element={<AdminDashboard />} /> */}
-        </Route>
-        {/* end of protected routes for admin */}
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        </Route> */}
 
+        {/* normal routes */}
         <Route path="*" element={<Error />} />
       </>
     )

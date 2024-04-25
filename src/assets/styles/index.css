@@ -10,8 +10,6 @@
 
     /* font family */
     --ff-poppins: 'Poppins';
-    --ff-quicksand: 'quicksand';
-    --ff-nunito: 'nunito';
 
     /* gradients */
   }
@@ -21,6 +19,7 @@
   * {
     @apply font-poppins;
     scroll-behavior: smooth;
+    scroll-margin-top: 6rem;
   }
 
   input[type='number']::-webkit-inner-spin-button,
@@ -45,8 +44,8 @@
   }
 
   body {
+    @apply lg:h-[100vh] text-theme-black;
     margin: 0;
     padding: 0;
-    min-height: var(--height);
   }
 }

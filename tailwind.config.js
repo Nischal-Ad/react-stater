@@ -4,12 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        nunito: 'var(--ff-nunito)',
         poppins: 'var(--ff-poppins)',
-        quicksand: 'var(--ff-quicksand)',
       },
       colors: {
-        custom: {
+        theme: {
           white: 'var(--white)',
           black: 'var(--black)',
         },
