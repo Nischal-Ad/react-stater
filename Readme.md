@@ -12,6 +12,6 @@ if needed change package name and its description in package.json
 
 insert "baseUrl" in localAxios.ts in common->utils
 
-### Helmet
+### Title
 
 insert app name in title in common->components
