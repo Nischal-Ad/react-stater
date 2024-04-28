@@ -44,7 +44,7 @@
   }
 
   body {
-    @apply lg:h-[100vh] text-theme-black;
+    @apply lg:h-[100vh] text-theme-black lg:overflow-hidden;
     margin: 0;
     padding: 0;
   }

@@ -1,3 +1,8 @@
+## Install
+```
+npx degit Nischal-Ad/react-stater frontend
+```
+
 ## After Installing
 
 ### Project title and icon
