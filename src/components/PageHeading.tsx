@@ -1,12 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-interface IHelmet {
+interface IPageHeading {
   title: string
   content?: string
 }
 
-const index: React.FC<IHelmet> = ({ title, content }) => {
+const PageHeading: React.FC<IPageHeading> = ({ title, content }) => {
   return (
     <Helmet>
       <title>{title} - App</title>
@@ -15,4 +15,4 @@ const index: React.FC<IHelmet> = ({ title, content }) => {
   )
 }
 
-export default index
+export default PageHeading

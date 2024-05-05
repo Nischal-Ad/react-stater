@@ -1,4 +1,5 @@
 ## Install
+
 ```
 npx degit Nischal-Ad/react-stater frontend
 ```
@@ -9,14 +10,10 @@ npx degit Nischal-Ad/react-stater frontend
 
 change project title and icon in index.html
 
-### Package.json
-
-if needed change package name and its description in package.json
-
 ### LocalAxios
 
-insert "baseUrl" in localAxios.ts in common->utils
+insert "baseUrl" in localAxios.ts in utils->localAxios.ts
 
 ### Title
 
-insert app name in title in common->components
+insert app name in PageHeading.tsx in components->PageHeading.tsx

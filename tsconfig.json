@@ -17,14 +17,13 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@Img/*": ["src/assets/img/*"],
-      "@Assets/*": ["src/assets/*"],
-      "@Components/*": ["src/common/components/*"],
-      "@Utils/*": ["src/common/utils/*"],
-      "@Shared/*": ["src/common/shared/*"],
+      "@Img/*": ["src/img/*"],
+      "@Src/*": ["src/*"],
+      "@Components/*": ["src/components/*"],
+      "@Utils/*": ["src/utils/*"],
       "@Pages/*": ["src/pages/*"],
-      "@Slices/*": ["src/redux/slices/*"],
-      "@Store": ["src/redux/store.ts"]
+      "@Slices/*": ["src/slices/*"],
+      "@Store": ["src/store.ts"]
     }
   },
   "include": ["src"],

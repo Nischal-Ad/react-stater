@@ -18,8 +18,8 @@
 @layer components {
   * {
     @apply font-poppins;
-    scroll-behavior: smooth;
-    scroll-margin-top: 6rem;
+    /* scroll-behavior: smooth;
+    scroll-margin-top: 6rem; */
   }
 
   input[type='number']::-webkit-inner-spin-button,
@@ -33,11 +33,11 @@
     appearance: textfield;
   }
 
-  *::-webkit-scrollbar {
+  /* *::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
+  } */
 
   a {
     text-decoration: none;

@@ -1,24 +1,29 @@
-// /* eslint-disable @typescript-eslint/no-explicit-any */
-// import authSlice from '@Slices/auth.slice'
-// import { useAppDispatch } from '@Store'
-// import { onLogin } from './auth.service'
-// import { notifyError, notifySuccess } from '@Utils/alerts'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import authSlice from '@Slices/auth.slice'
+import localAxios from '@Src/utils/localAxios'
+import { useAppDispatch } from '@Store'
+import { notifyError, notifySuccess } from '@Src/utils/alerts'
 
-// export const useAuth = () => {
-//   const dispatch = useAppDispatch()
+interface ILogin {
+  email: string
+  password: string
+}
 
-//   const onLoginUser = async (payload: TLogin) => {
-//     try {
-//       dispatch(authSlice.actions.setLoading())
+export const useAuth = () => {
+  const dispatch = useAppDispatch()
 
-//       const res = await onLogin(payload)
-//       dispatch(authSlice.actions.setData(res))
-//       notifySuccess('you are now logged in')
-//     } catch (error: any) {
-//       dispatch(authSlice.actions.setError(error.message))
-//       notifyError(error.message)
-//     }
-//   }
+  const onLoginUser = async (payload: ILogin) => {
+    try {
+      dispatch(authSlice.actions.setLoading())
 
-//   return { onLoginUser }
-// }
+      const res: IAuth = await localAxios.post(`/login`, payload)
+      dispatch(authSlice.actions.setData(res))
+      notifySuccess('you are now logged in')
+    } catch (error: any) {
+      dispatch(authSlice.actions.setError(error.message))
+      notifyError(error.message)
+    }
+  }
+
+  return { onLoginUser }
+}

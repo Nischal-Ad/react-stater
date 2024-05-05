@@ -6,14 +6,13 @@ import path from 'path'
 export default defineConfig({
   resolve: {
     alias: {
-      '@Img': path.resolve(__dirname, './src/assets/img'),
-      '@Assets': path.resolve(__dirname, './src/assets'),
-      '@Components': path.resolve(__dirname, './src/common/components'),
-      '@Utils': path.resolve(__dirname, './src/common/utils'),
-      '@Shared': path.resolve(__dirname, './src/common/shared'),
+      '@Img': path.resolve(__dirname, './src/img'),
+      '@Src': path.resolve(__dirname, './src/'),
+      '@Components': path.resolve(__dirname, './src/components'),
+      '@Utils': path.resolve(__dirname, './src/utils'),
       '@Pages': path.resolve(__dirname, './src/pages'),
-      '@Slices': path.resolve(__dirname, './src/redux/slices'),
-      '@Store': path.resolve(__dirname, './src/redux/store.ts'),
+      '@Slices': path.resolve(__dirname, './src/slices'),
+      '@Store': path.resolve(__dirname, './src/store.ts'),
     },
   },
   plugins: [react()],
