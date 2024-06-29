@@ -22,8 +22,9 @@
       "@Components/*": ["src/components/*"],
       "@Utils/*": ["src/utils/*"],
       "@Pages/*": ["src/pages/*"],
-      "@Slices/*": ["src/slices/*"],
-      "@Store": ["src/store.ts"]
+      "@Slices/*": ["src/redux/slices/*"],
+      "@Hooks/*": ["src/redux/hooks/*"],
+      "@Store": ["src/redux/store.ts"]
     }
   },
   "include": ["src"],
