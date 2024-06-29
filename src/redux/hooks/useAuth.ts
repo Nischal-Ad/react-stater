@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import authSlice from '@Slices/auth.slice'
-import localAxios from '@Src/utils/localAxios'
+import localAxios from '@Utils/localAxios'
 import { useAppDispatch } from '@Store'
-import { notifyError, notifySuccess } from '@Src/utils/alerts'
+import { notifyError, notifySuccess } from '@Utils/alerts'
 
 interface ILogin {
   email: string
