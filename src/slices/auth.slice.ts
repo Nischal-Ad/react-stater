@@ -1,13 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { CaseReducer, PayloadAction } from '@reduxjs/toolkit'
+import decodeAccessToken from '@Src/utils/decodeAccessToken'
 
 interface IAuthState extends IState {
   data: Partial<IAuth>
 }
 
+const token = localStorage.getItem('token')
+const authDetails: any = decodeAccessToken(token as string)
+
 const initialState: IAuthState = {
   status: 'idle',
-  data: {},
+  data: authDetails,
   error: '',
 }
 

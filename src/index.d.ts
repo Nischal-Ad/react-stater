@@ -20,7 +20,6 @@ interface IUser {
   _id: string
   password: string
   name: string
-  active: boolean
   role: 'admin' | 'user'
   createdAt: Date
 }

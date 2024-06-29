@@ -5,8 +5,7 @@
 @layer base {
   :root {
     /* color  */
-    --black: #474747;
-    --white: #f3f3f3;
+    --black: #1f1f1f;
 
     /* font family */
     --ff-poppins: 'Poppins';
@@ -55,7 +54,7 @@
   }
 
   body {
-    @apply text-theme-black;
+    @apply text-black text-[14px] leading-[22px]; 
     margin: 0;
     padding: 0;
   }
